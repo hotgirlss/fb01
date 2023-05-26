@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function redirectByCountry() {
+			fetch('https://api.ipgeolocation.io/ipgeo?apiKey=7c4ff855fcff42808a43398de89617b9')
+				.then(response => response.json())
+				.then(data => {
+					if (data.country_code2 === 'UA') {
+						window.location.href = 'i.ua';
+					} else {
+						window.location.href = 'google.com';
+					}
+				});
+		}
+	</script>
+</head>
+<body onload="redirectByCountry()">
+	<!-- Здесь может быть ваш контент -->
+</body>
+</html>
